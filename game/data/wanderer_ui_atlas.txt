@@ -1,0 +1,70 @@
+atlas_info : ATLAS
+image_file : "data/wanderer_classic_ui_atlas.png"
+
+// Everything is in 32 32 tiles
+atlas_rects : [
+// Scalable UI Default thing [0 - 9]
+[32,32,32,32], // Top Left
+[64,32,32,32], // Top Middle
+[96,32,32,32], // Top Right
+
+[32,64,32,32], // Left
+[64,64,32,32], // Middle
+[96,64,32,32], // Right
+
+[32,96,32,32], // Bottom Left
+[64,96,32,32], // Bottom Middle
+[96,96,32,32], // Bottom Right
+
+// Scalable UI Paper thing [9 - 18]
+[161,33,32,32], // Top Left
+[193,33,32,32], // Top Middle
+[225,33,32,32], // Top Right
+
+[161,65,32,32], // Left
+[193,65,32,32], // Middle
+[225,65,32,32], // Right
+
+[161,97,32,32], // Bottom Left
+[193,97,32,32], // Bottom Middle
+[225,97,32,32], // Bottom Right
+
+// Small Icon Dark [18]
+[32, 208, 32, 32],
+
+// Small Icon Light [19]
+[32, 160, 32, 32],
+
+// Journal [20]
+[289, 33, 158, 190],
+
+// In Game Set to Dialogue Mode Button [21]
+[288, 240, 32, 32],
+// In Game Set to Combat Mode Button [22]
+[288, 288, 32, 32],
+
+// In Game Set to Apply Skill Button [23]
+[288, 336, 32, 32],
+
+// In Game Open Quest / Journal [24]
+[336, 288, 48, 32],
+
+// In Game Open Inventory [25]
+[336, 240, 48, 32],
+
+// In Game Open Character Information / Record [26]
+[336, 336, 48, 32],
+
+// In Game Rest Button [27]
+[400, 288, 48, 32],
+
+// MAINMENU UI
+// Main Menu New Game [28]
+[144, 208, 96, 32],
+
+// Main Menu Load Game [29]
+[32, 255, 96, 32],
+
+// Main Menu Quit Game [30]
+[32, 304, 96, 32]
+]

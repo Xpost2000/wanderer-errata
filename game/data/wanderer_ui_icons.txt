@@ -1,0 +1,9 @@
+atlas_info : TILED_ATLAS
+image_file : "data/wanderer_classic_item_icon_atlas.png"
+
+rows : 16
+columns : 18
+
+tile_width : 32
+tile_height : 32
+

@@ -1,0 +1,6 @@
+# ignore build system results and stuff.
+syntax: glob
+
+game/bin
+tags
+# game/deps

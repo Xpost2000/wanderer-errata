@@ -1,0 +1,15 @@
+atlas_info : ATLAS
+image_file : "data/goblin.png"
+
+rows : 8
+columns : 8
+
+tile_width : 256
+tile_height : 256
+
+// This is an ambiguous language.
+// Man scheme as a DSL would be very useful
+// although I'm trying to get some educational value.
+// TODO(jerry) : Change syntax from {} to refer to "blocks"
+// [] is used for lists and can be scanned frequently.
+atlas_rects : [ [0, 0, 256, 256], [256, 0, 256, 256] ]

@@ -1,0 +1,41 @@
+name : "human"
+logical_scale : ACTOR_MODEL_SCALE_MEDIUM
+draw_scale : 0.425
+ACTOR_ANIMATION_GROUP_IDLE : {
+idle_01 : {
+flags : [ANIMATION_SET_FLAG_LOOPABLE]direction : ANIMATION_SET_DIRECTION_315spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.489origin_y : 0.710time_to_next_frame : 0.000spritesheet_index : 32}}asdf : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_0spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.497origin_y : 0.681time_to_next_frame : 0.000spritesheet_index : 40}}deqs : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_45spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.480origin_y : 0.690time_to_next_frame : 0.000spritesheet_index : 48}}dag : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_90spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.506origin_y : 0.682time_to_next_frame : 0.000spritesheet_index : 56}}tag : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_135spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.499origin_y : 0.660time_to_next_frame : 0.000spritesheet_index : 0}}aa : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_180spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.512origin_y : 0.696time_to_next_frame : 0.000spritesheet_index : 8}}ss : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_225spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.492origin_y : 0.691time_to_next_frame : 0.000spritesheet_index : 16}}pasdasd : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_270spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.492origin_y : 0.691time_to_next_frame : 0.000spritesheet_index : 24}}p213123 : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_360spritesheet_file : "data//male_base_atlas.txt"anim_frame_0 : {
+origin_x : 0.492origin_y : 0.691time_to_next_frame : 0.000spritesheet_index : 40}}}
+ACTOR_ANIMATION_GROUP_DEAD : {
+dead_00 : {
+flags : [êw·¯U]direction : ANIMATION_SET_DIRECTION_OVERRIDEspritesheet_file : "data//male_base_atlas.txt"data/orc_iso_base.png : {
+origin_x : 0.461origin_y : 0.672time_to_next_frame : 0.000spritesheet_index : 63}}
+ACTOR_ANIMATION_GROUP_IDLE_ATTACK_READY : {
+(null)}
+ACTOR_ANIMATION_GROUP_ATTACK : {
+(null)}
+ACTOR_ANIMATION_GROUP_SPELL_CAST : {
+(null)}
+ACTOR_ANIMATION_GROUP_DYING : {
+(null)}
+ACTOR_ANIMATION_GROUP_WALK : {
+(null)}
+ACTOR_ANIMATION_GROUP_INTERACT : {
+(null)}
+ACTOR_ANIMATION_GROUP_INJURED : {
+(null)}

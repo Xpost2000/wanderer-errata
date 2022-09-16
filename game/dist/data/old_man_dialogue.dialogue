@@ -1,0 +1,87 @@
+// start_node : start
+
+start : {
+    type : BRANCHING_NODE
+    selection_condition : {
+        variable : "old_man_spoke"
+        compare_type : EQUAL_TO
+        against : 2
+        then : test_easter
+    }
+    selection_condition : {
+        variable : "old_man_spoke"
+        compare_type : NOT_EQUAL_TO
+        against : 0
+        then : greeting_after
+        else : greeting_first
+    }
+}
+
+// Target speaker is technically implicitly ACTOR_ORIGINAL_SPEAKER...
+// I just set it just to make sure nothing breaks.
+test_easter : {
+   type : DIALOGUE_NODE
+   target_speaker : ACTOR_ORIGINAL_SPEAKER
+
+   text : "TEST EASTER, I wonder if this thing supports paragraphs... (WORD WRAP TEST). Hi there anyways this is some big long sample text."
+
+   trade_menu_choice : {
+       text : "test text"
+   }
+
+    goodbye_choice : {
+       text : "Bye bye! Restart please :)"
+       events : [[SET_VARIABLE, "old_man_spoke", 0, 1]]
+    }
+}
+
+greeting_after : {
+   type : DIALOGUE_NODE
+   target_speaker : ACTOR_ORIGINAL_SPEAKER
+
+   text : "You've already gotten what you want from me. Leave me alone."
+
+   goodbye_choice : {
+       text : "Goodbye."
+       events : [[SET_VARIABLE, "old_man_spoke", 2, 1]]
+   }
+}
+
+greeting_first : {
+    type : DIALOGUE_NODE
+    target_speaker : ACTOR_ORIGINAL_SPEAKER
+    text : "Smoke... I smell it..."
+    choice : {
+        text : "But I don't see any?"
+        jump : next_00 
+    }
+    goodbye_choice : {
+        text : "You're a senile old man. No point."
+    }
+}
+
+next_00 : {
+   type : DIALOGUE_NODE
+   target_speaker : ACTOR_ORIGINAL_SPEAKER
+   text : "You young-ins know nothing... I betcha you don't!"
+
+   choice : {
+      text : "Try me!"
+      jump : delusional
+      events : [[SET_VARIABLE, "old_man_spoke", 1, 1], [CRITICAL_PLOT_POINT]]
+   }
+}
+
+delusional : {
+   // if it's a string, we should look for another actor
+   // referenced by the name given.
+   // If it's a symbol and is ACTOR_PLAYER, set the speaker to player.
+   // The original speaker should be saved in symbol ACTOR_ORIGINAL_SPEAKER
+   type : DIALOGUE_NODE
+   target_speaker : ACTOR_PLAYER
+
+   text : "*This man must be delusional...*"
+   goodbye_choice : {
+      text : "*Walk away slowly.*"
+   }
+}

@@ -1,0 +1,13 @@
+// This is a test file
+
+/*
+This is a test comment hopefully that works.
+*/
+atlas_info : TILED_ATLAS
+image_file : "data/goblin.png"
+
+rows : 8
+columns : 8
+
+tile_width : 256
+tile_height : 256

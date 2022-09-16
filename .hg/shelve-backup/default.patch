@@ -1,0 +1,90 @@
+# HG changeset patch
+# User shelve@localhost
+# Date 1590867160 14400
+#      Sat May 30 15:32:40 2020 -0400
+# Node ID 6072902176652edc79bc73a5e39f07a888766efe
+# Parent  249bc1a5506c16dca8e45565cf728bce9e9bcb13
+changes to: 8 byte alignment for memory pool
+
+diff --git a/game/src/memory_pool.c b/game/src/memory_pool.c
+--- a/game/src/memory_pool.c
++++ b/game/src/memory_pool.c
+@@ -87,6 +87,10 @@
+             return NULL;
+         }else{
+             u8* return_address = pool->memory + pool->used;
++#if 0 
++            pool->used += size;
++            return return_address;
++#else
+             u64 pad = alignment_padding( (u64)return_address, 8 );
+ 
+             pool->used += size;
+@@ -96,6 +100,7 @@
+             memset(aligned_address, 0, size);
+ 
+             return aligned_address;
++#endif
+         }
+     }
+ 
+diff --git a/game/src/sdl_main.c b/game/src/sdl_main.c
+--- a/game/src/sdl_main.c
++++ b/game/src/sdl_main.c
+@@ -150,8 +150,8 @@
+     // why does the renderer have to be last?
+     // this might have been a mistake made really early on
+     // I cannot notice it though.... s**t.
++    game_input* input  = memory_pool_allocate( &main_memory, sizeof(game_input) );
+     game_state* state  = memory_pool_allocate( &main_memory, sizeof(game_state) );
+-    game_input* input  = memory_pool_allocate( &main_memory, sizeof(game_input) );
+     renderer* renderer = memory_pool_allocate( &main_memory, sizeof(renderer) );
+ 
+     state->scratch_memory = (void*)(main_memory.memory) + (memory_pool_size - MB(8));
+diff --git a/game/src/wanderer.c b/game/src/wanderer.c
+--- a/game/src/wanderer.c
++++ b/game/src/wanderer.c
+@@ -256,6 +256,8 @@
+                 if( model_asset->type == GAME_ASSET_ACTOR_MODEL ){
+                     model = &model_asset->actor_model;
+                 }else{
++                    printf("no model?\n");
++                    printf("the type was:\n%s\n", game_asset_type_strings[model_asset->type]);
+                     continue;
+                 }
+ 
+diff --git a/game/src/wanderer_assets.c b/game/src/wanderer_assets.c
+--- a/game/src/wanderer_assets.c
++++ b/game/src/wanderer_assets.c
+@@ -3,13 +3,6 @@
+ 
+ #include "config.h"
+ 
+-static char* game_asset_type_strings[GAME_ASSET_TYPE_COUNT] = {
+-    STRINGIFY(GAME_ASSET_NONE),
+-    STRINGIFY(GAME_ASSET_FONT),
+-    STRINGIFY(GAME_ASSET_BITMAP),
+-    STRINGIFY(GAME_ASSET_SPRITESHEET)
+-};
+-
+ game_asset_handle game_asset_null( void ){
+     return (game_asset_handle){ .id = 0 };
+ }
+diff --git a/game/src/wanderer_assets.h b/game/src/wanderer_assets.h
+--- a/game/src/wanderer_assets.h
++++ b/game/src/wanderer_assets.h
+@@ -108,6 +108,14 @@
+     GAME_ASSET_TYPE_COUNT
+ };
+ 
++static char* game_asset_type_strings[GAME_ASSET_TYPE_COUNT] = {
++    STRINGIFY(GAME_ASSET_NONE),
++    STRINGIFY(GAME_ASSET_FONT),
++    STRINGIFY(GAME_ASSET_BITMAP),
++    STRINGIFY(GAME_ASSET_SPRITESHEET),
++    STRINGIFY(GAME_ASSET_ACTOR_MODEL)
++};
++
+ // a weird fat handle?
+ typedef struct game_asset_handle{
+     u32 id;

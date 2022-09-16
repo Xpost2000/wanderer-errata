@@ -1,0 +1,129 @@
+name : "human"
+logical_scale : ACTOR_MODEL_SCALE_MEDIUM
+draw_scale : 0.625
+ACTOR_ANIMATION_GROUP_IDLE : {
+	idle_01 : {
+		flags : [ANIMATION_SET_FLAG_LOOPABLE]
+		direction : ANIMATION_SET_DIRECTION_315
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.489
+			origin_y : 0.710
+			time_to_next_frame : 0.000
+			spritesheet_index : 32
+		}
+	}
+	asdf : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_0
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.497
+			origin_y : 0.681
+			time_to_next_frame : 0.000
+			spritesheet_index : 40
+		}
+	}
+	deqs : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_45
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.480
+			origin_y : 0.690
+			time_to_next_frame : 0.000
+			spritesheet_index : 48
+		}
+	}
+	dag : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_90
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.506
+			origin_y : 0.682
+			time_to_next_frame : 0.000
+			spritesheet_index : 56
+		}
+	}
+	tag : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_135
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.499
+			origin_y : 0.660
+			time_to_next_frame : 0.000
+			spritesheet_index : 0
+		}
+	}
+	aa : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_180
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.512
+			origin_y : 0.696
+			time_to_next_frame : 0.000
+			spritesheet_index : 8
+		}
+	}
+	ss : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_225
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.492
+			origin_y : 0.691
+			time_to_next_frame : 0.000
+			spritesheet_index : 16
+		}
+	}
+	pasdasd : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_270
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.492
+			origin_y : 0.691
+			time_to_next_frame : 0.000
+			spritesheet_index : 24
+		}
+	}
+	p213123 : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_360
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		anim_frame_0 : {
+			origin_x : 0.492
+			origin_y : 0.691
+			time_to_next_frame : 0.000
+			spritesheet_index : 40
+		}
+	}
+}
+ACTOR_ANIMATION_GROUP_DEAD : {
+	dead_00 : {
+		flags : []
+		direction : ANIMATION_SET_DIRECTION_OVERRIDE
+		spritesheet_file : "data//male_heavy_atlas.txt"
+		data/orc_iso_base.png : {
+			origin_x : 0.461
+			origin_y : 0.672
+			time_to_next_frame : 0.000
+			spritesheet_index : 63
+		}
+	}
+}
+ACTOR_ANIMATION_GROUP_IDLE_ATTACK_READY : {
+}
+ACTOR_ANIMATION_GROUP_ATTACK : {
+}
+ACTOR_ANIMATION_GROUP_SPELL_CAST : {
+}
+ACTOR_ANIMATION_GROUP_DYING : {
+}
+ACTOR_ANIMATION_GROUP_WALK : {
+}
+ACTOR_ANIMATION_GROUP_INTERACT : {
+}
